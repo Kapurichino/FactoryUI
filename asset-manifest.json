@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/FactoryUI/static/css/main.31d6cfe0.css",
+    "main.js": "/FactoryUI/static/js/main.0038c1dc.js",
+    "static/js/787.c06a1074.chunk.js": "/FactoryUI/static/js/787.c06a1074.chunk.js",
+    "index.html": "/FactoryUI/index.html",
+    "main.0038c1dc.js.map": "/FactoryUI/static/js/main.0038c1dc.js.map",
+    "787.c06a1074.chunk.js.map": "/FactoryUI/static/js/787.c06a1074.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.0038c1dc.js"
+  ]
+}
