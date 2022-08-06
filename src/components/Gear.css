@@ -1,0 +1,86 @@
+div {
+  box-sizing: border-box;
+}
+
+.gearPosition {
+  position: fixed;
+  width: 31vw;
+  height: 31vw;
+  bottom: 0;
+}
+.gearPosition .gearContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gearPosition .gearContainer .leftGear {
+  transform-origin: 50% 50%;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  position: absolute;
+  border: none;
+  -webkit-animation-name: leftGearAnimation;
+          animation-name: leftGearAnimation;
+  font-size: 20vw;
+  color: rgb(82, 51, 17);
+}
+.gearPosition .gearContainer .rightGear {
+  transform-origin: 50% 50%;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  position: absolute;
+  border: none;
+  -webkit-animation-name: rightGearAnimation;
+          animation-name: rightGearAnimation;
+  font-size: 15vw;
+  bottom: 5%;
+  right: 0;
+  color: rgb(153, 97, 24);
+}
+.gearPosition .gearContainer::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+@-webkit-keyframes leftGearAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes leftGearAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rightGearAnimation {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rightGearAnimation {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .gearPosition {
+    width: 22vw;
+    height: 22vw;
+  }
+  .gearPosition .gearContainer .leftGear {
+    font-size: 15vw;
+  }
+  .gearPosition .gearContainer .rightGear {
+    font-size: 10vw;
+  }
+}/*# sourceMappingURL=Gear.css.map */

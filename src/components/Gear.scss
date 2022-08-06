@@ -1,0 +1,73 @@
+div{
+    box-sizing: border-box;
+  }
+  
+  @mixin gear() {
+    transform-origin: 50% 50%;
+    animation-duration : 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    border:none;
+  }
+  
+  .gearPosition{
+    position:fixed;
+    width: 31vw;
+    height: 31vw;
+    bottom:0;
+    .gearContainer{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .leftGear{
+        @include gear();
+        animation-name : leftGearAnimation;
+        font-size: 20vw;
+        color: rgb(82, 51, 17);
+      }
+      
+      .rightGear{
+        @include gear();
+        animation-name : rightGearAnimation;
+        font-size: 15vw;
+        bottom: 5%;
+        right:0;
+        color: rgb(153, 97, 24)  
+      }
+      &::after{
+        content: "";
+        clear:both;
+        display: block;
+      }
+    }
+    
+  }
+  
+  @keyframes leftGearAnimation {
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+  
+  @keyframes rightGearAnimation {
+    100% {
+      transform:rotate(-360deg);
+    }
+  }
+  
+  @media screen and (min-width:768px) {
+    .gearPosition{
+      width: 22vw;
+      height: 22vw;
+      .gearContainer{
+        .leftGear{
+          font-size: 15vw;
+        }
+    
+        .rightGear{
+          font-size: 10vw;
+        }
+      }
+    }
+  }
