@@ -125,6 +125,108 @@ div {
   background-image: url("../public/imgs/img2.jpg");
   background-size: 100% 100%;
 }
-.container2:hover {
-  transform: scale(1.1);
+
+.container3 {
+  width: 100%;
+  height: 100%;
+  padding: 10vw;
+  position: absolute;
+}
+
+.animation {
+  background-color: rgb(236, 240, 243);
+  box-shadow: 0px 10px 30px rgb(44, 42, 42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animation div {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.animation .video {
+  width: 100%;
+  height: 100%;
+  display: none;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.animation .show {
+  display: block;
+}
+
+.start {
+  -webkit-animation-name: animationScreen;
+          animation-name: animationScreen;
+  -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes animationScreen {
+  0% {
+    width: 0%;
+    height: 10%;
+  }
+  50% {
+    width: 100%;
+    height: 10%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes animationScreen {
+  0% {
+    width: 0%;
+    height: 10%;
+  }
+  50% {
+    width: 100%;
+    height: 10%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+.moveRight {
+  width: 100%;
+}
+
+.moveDown {
+  height: 100%;
+}
+
+.animationButton {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 10vw;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animationButton span {
+  flex-grow: 0.5;
+  width: 12vw;
+  padding: 1vw;
+  font-size: 4vw;
+  background-color: transparent;
+  color: aliceblue;
+  border: 1px solid aliceblue;
+  border-radius: 5vw;
+  text-align: center;
+  transition: all 1s;
+}
+.animationButton span:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }/*# sourceMappingURL=App.css.map */

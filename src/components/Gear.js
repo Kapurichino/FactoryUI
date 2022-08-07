@@ -5,10 +5,10 @@ import './Gear.css';
 export default function Gear(){
     return(
         <div className="gearPosition">
-            {/* <div className="gearContainer">
+            <div className="gearContainer">
                 <FontAwesomeIcon className={"leftGear"} icon={faGear}/>
                 <FontAwesomeIcon className={"rightGear"} icon={faGear}/>
-            </div> */}
+            </div>
         </div>
     )
 }

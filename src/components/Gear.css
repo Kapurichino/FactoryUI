@@ -4,10 +4,10 @@ div {
 
 .gearPosition {
   position: fixed;
-  width: 31vw;
-  height: 31vw;
+  width: 15vw;
+  height: 15vw;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
 }
 .gearPosition .gearContainer {
   width: 100%;
@@ -26,7 +26,7 @@ div {
   border: none;
   -webkit-animation-name: leftGearAnimation;
           animation-name: leftGearAnimation;
-  font-size: 20vw;
+  font-size: 10vw;
   left: 3%;
   color: rgb(82, 51, 17);
 }
@@ -42,7 +42,7 @@ div {
   border: none;
   -webkit-animation-name: rightGearAnimation;
           animation-name: rightGearAnimation;
-  font-size: 15vw;
+  font-size: 6vw;
   bottom: 3%;
   right: 0;
   color: rgb(153, 97, 24);
@@ -76,13 +76,13 @@ div {
 }
 @media screen and (min-width: 768px) {
   .gearPosition {
-    width: 22vw;
-    height: 22vw;
+    width: 11vw;
+    height: 11vw;
   }
   .gearPosition .gearContainer .leftGear {
-    font-size: 15vw;
+    font-size: 8vw;
   }
   .gearPosition .gearContainer .rightGear {
-    font-size: 10vw;
+    font-size: 4vw;
   }
 }/*# sourceMappingURL=Gear.css.map */
