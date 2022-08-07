@@ -1,0 +1,45 @@
+div {
+  box-sizing: border-box;
+}
+
+.swiperContainer {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgb(226, 233, 245);
+  box-shadow: 0px 5px 10px rgb(136, 134, 134);
+}
+.content .title {
+  margin: "0.5rem 0";
+  font-size: 24;
+  font-weight: 70;
+}
+
+.swiper-slide {
+  padding: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  transition: all 1s;
+}
+.swiper-slide:hover {
+  transform: scale(1.05);
+}
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+}/*# sourceMappingURL=MySwiper.css.map */
