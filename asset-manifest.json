@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FactoryUI/static/css/main.ecbf2887.css",
-    "main.js": "/FactoryUI/static/js/main.2b7a737f.js",
+    "main.css": "/FactoryUI/static/css/main.8ee3640b.css",
+    "main.js": "/FactoryUI/static/js/main.cc134d1f.js",
     "static/media/img2.jpg": "/FactoryUI/static/media/img2.02923118eccbb96428ce.jpg",
     "static/media/img1.jpg": "/FactoryUI/static/media/img1.53dad7d39785765339ed.jpg",
     "index.html": "/FactoryUI/index.html",
-    "main.ecbf2887.css.map": "/FactoryUI/static/css/main.ecbf2887.css.map",
-    "main.2b7a737f.js.map": "/FactoryUI/static/js/main.2b7a737f.js.map"
+    "main.8ee3640b.css.map": "/FactoryUI/static/css/main.8ee3640b.css.map",
+    "main.cc134d1f.js.map": "/FactoryUI/static/js/main.cc134d1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecbf2887.css",
-    "static/js/main.2b7a737f.js"
+    "static/css/main.8ee3640b.css",
+    "static/js/main.cc134d1f.js"
   ]
 }
