@@ -2,17 +2,25 @@ import Gear from './components/Gear.js';
 import MySwiper from './components/MySwiper.js';
 import Progressbar from './components/ProgressBar.js';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+// timer변수가 로컬이고 각 함수 호출 후 해당 값이 손실 될 수 있다.
+// 따라서, 유지하기 위해 함수 외부에 놓아야 한다.
+let timerID;
 
 function App() {
   const [start, setStart] = useState("");
   const [visible, setVisible] = useState("");
+  const [video, setVideo] = useState("");
+  const videoRef = useRef();
+
   useEffect(()=>{
     if (start == "start")
-      setTimeout(()=>{(setVisible("show"))},4500);
+      timerID = setTimeout(()=>{(setVisible("show")); setVideo("https://www.youtube.com/embed/93iQRtqhWPM")},4500);
     else{
+      clearTimeout(timerID);
       setVisible("");
+      setVideo("");
     }
   },[start])
   return (
@@ -22,10 +30,10 @@ function App() {
       <div className={"navBar"}>
         <div className={"listContainer"}>
           <ul>
-            <li><span>start</span></li>
-            <li><span>start</span></li>
-            <li><span>start</span></li>
-            <li><span>start</span></li>
+            <li><span>정보</span></li>
+            <li><span>서비스</span></li>
+            <li><span>스토리</span></li>
+            <li><span>약속</span></li>
           </ul>
         </div>
       </div>
@@ -46,14 +54,14 @@ function App() {
         <div className={"subBg"}/>
         <div className={"overlay"}/> 
         <div className={"container3"}>
-          <div className={`animation ${start}`}>
-              <video className={`video ${visible}`} controls muted="muted" autoPlay loop src={process.env.PUBLIC_URL+"/video/ocean.mov"} type="video.mov" > </video>
+          <div className={`animation ${start}`} ref={videoRef}>
+            <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
           </div>  
         </div>
         <div className={"animationButton"}>
-          <span onClick={()=>{setStart("start")}} style={{marginLeft: "50vw"}}>OPEN</span>
-          <div style={{flexGrow:"1"}}/>
-          <span onClick={()=>{setStart("")}} style={{marginRight: "10vw"}}>CLOSE</span>
+          <span onClick={()=>{setStart("start"); videoRef.current.scrollIntoView();}} style={{marginLeft: "55vw"}}>OPEN</span>
+          <div/>
+          <span onClick={()=>{setStart("")}} style={{marginRight: "10vw", }}>CLOSE</span>
         </div>
       </div>
     </div>

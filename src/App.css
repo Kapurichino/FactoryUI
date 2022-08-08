@@ -36,8 +36,7 @@ div {
   padding: 0 10%;
   color: aliceblue;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 24px;
+  font-size: 2vw;
   transition: all 1s;
 }
 .listContainer ul li span:hover {
@@ -47,16 +46,16 @@ div {
 
 .navBar {
   margin-top: 50px;
-  width: 100%;
-  height: 8vh;
+  width: 100vw;
+  height: 6vw;
   background-color: orange;
   display: flex;
   align-items: center;
 }
 
 .container1 {
-  width: 100%;
-  height: 600px;
+  width: 100vw;
+  height: 50vw;
   position: relative;
 }
 .container1 .overlay {
@@ -97,17 +96,17 @@ div {
 }
 
 .postBox {
+  width: 100vw;
+  height: 60vh;
   margin-top: 20vh;
   padding-left: 5vw;
   padding-right: 5vw;
-  width: 100%;
-  height: 80vh;
   background-color: rgb(231, 221, 221);
 }
 
 .container2 {
-  width: 100%;
-  height: 600px;
+  width: 100vw;
+  height: 50vw;
   position: relative;
   transition: all 1s;
 }
@@ -213,20 +212,26 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1s;
+}
+.animationButton div {
+  flex-grow: 1;
 }
 .animationButton span {
   flex-grow: 0.5;
   width: 12vw;
   padding: 1vw;
   font-size: 4vw;
-  background-color: transparent;
+  background-color: transpar ent;
   color: aliceblue;
   border: 1px solid aliceblue;
   border-radius: 5vw;
   text-align: center;
+  opacity: 0.5;
   transition: all 1s;
 }
 .animationButton span:hover {
   cursor: pointer;
   transform: scale(1.2);
+  opacity: 1;
 }/*# sourceMappingURL=App.css.map */

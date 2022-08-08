@@ -33,8 +33,7 @@ div{
           padding: 0 10%;
           color:aliceblue;
           font-weight: 500;
-          font-size: 30px;
-          line-height: 24px;
+          font-size: 2vw;
           transition: all 1s;
           &:hover{
             transform: scale(1.2);
@@ -49,16 +48,16 @@ $mainHeight: 600px;
 
 .navBar{
   margin-top: 50px;
-  width: 100%;
-  height: 8vh;
+  width: 100vw;
+  height: 6vw;
   background-color: orange;
   display: flex;
   align-items: center;
 }
 
 @mixin container() {
-  width: 100%;
-  height : $mainHeight;
+  width: 100vw;
+  height : 50vw;
   position: relative;
 }
 
@@ -107,11 +106,11 @@ $mainHeight: 600px;
 }
 
 .postBox{
+  width: 100vw;
+  height: 60vh;
   margin-top: 20vh;
   padding-left:5vw;
   padding-right: 5vw;
-  width: 100%;
-  height: 80vh;
   background-color : rgb(231, 221, 221);
 }
 
@@ -202,20 +201,26 @@ $mainHeight: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1s;
+  div{
+    flex-grow: 1;
+  }
   span{
     flex-grow: 0.5;
     width: 12vw;
     padding: 1vw;
     font-size: 4vw;
-    background-color: transparent;
+    background-color: transpar ent;
     color: aliceblue;
     border: 1px solid aliceblue;
     border-radius: 5vw;
     text-align: center;
+    opacity:0.5;
     transition: all 1s;
     &:hover{
       cursor: pointer;
       transform: scale(1.2);
+      opacity: 1;
     }
   }
 }

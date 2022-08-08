@@ -28,7 +28,7 @@ div {
           animation-name: leftGearAnimation;
   font-size: 10vw;
   left: 3%;
-  color: rgb(82, 51, 17);
+  color: rgb(51, 31, 9);
 }
 .gearPosition .gearContainer .rightGear {
   transform-origin: 50% 50%;
@@ -45,7 +45,7 @@ div {
   font-size: 6vw;
   bottom: 3%;
   right: 0;
-  color: rgb(153, 97, 24);
+  color: rgb(107, 104, 98);
 }
 .gearPosition .gearContainer::after {
   content: "";

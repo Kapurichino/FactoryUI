@@ -13,26 +13,18 @@ SwiperCore.use([Navigation, Pagination, Scrollbar]);
 const posts = [
     {
       id:1,
-      title: "A bor, mint életelixír.",
-      cover: "//unsplash.it/500/250",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum luctus felis eget tempor. Quisque nunc enim, tristique ut gravida ut, vulputate lacinia quam. Morbi et leo nec tortor suscipit tristique.",
+      title: "Naturally",
+      description: "\"자연스러운 디자인\""
     },
     {
       id:2,
-      title: "Bor szerdák ajándék borral minden fogáshoz.",
-      date: "2021. 04. 21. 18.00",
-      cover: "//unsplash.it/1000/500",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum luctus felis eget tempor. Quisque nunc enim, tristique ut gravida ut, vulputate lacinia quam. Morbi et leo nec tortor suscipit tristique.",
+      title: "Lively",
+      description: "\"생동감 있는 디자인\""
     },
     {
       id:3,
-      title: "Egy harmadik esemény",
-      date: "2021. 05. 01. 14.00",
-      cover: "//unsplash.it/800/400",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum luctus felis eget tempor. Quisque nunc enim, tristique ut gravida ut, vulputate lacinia quam. Morbi et leo nec tortor suscipit tristique.",
+      title: "Sensual",
+      description: "\"감각적인 디자인\""
     }
   ]
 export default function MySwiper(){
@@ -47,23 +39,23 @@ export default function MySwiper(){
                  loop
                  modules={[Pagination, Navigation]}
                  breakpoints={{
-                  1200:{
-                    slidesPerView:3
+                  576:{
+                    slidesPerView:2,
                   },
                   768:{
-                    slidesPerView:2
+                    slidesPerView:3,
                   }
-                 }}
+                }}
             >
                 {posts.map((posts)=>(
                     <SwiperSlide key={posts.id}>
                       <div className={"content"}>
-                        <h3 className={"title"}>
-                        {posts.title}
+                        <img src={process.env.PUBLIC_URL+`/imgs/slide${posts.id}.jpg`}/>
+                        <h3>
+                          <i>{posts.title}</i>
                         </h3>
-                        <p className="date">{posts.date}</p>
-                        <p style={{ margin: "1rem 0", fontSize: 18, lineHeight: "1.667" }}>
-                        {posts.description}
+                        <p>
+                          {posts.description}
                         </p>
                       </div>
                     </SwiperSlide>
