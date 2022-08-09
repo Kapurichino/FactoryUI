@@ -7,13 +7,6 @@ div{
   box-sizing: border-box;
 }
 
-.middle{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .listContainer{
   width: 100%;
@@ -96,7 +89,6 @@ $mainHeight: 600px;
         transform: scale(1.1);
       }
     }
-    
   }
   &::after{
     content: "";
@@ -105,10 +97,19 @@ $mainHeight: 600px;
   }
 }
 
+
+.middle{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .postBox{
   width: 100vw;
   height: 60vh;
-  margin-top: 20vh;
+  margin-top: 10vh;
   padding-left:5vw;
   padding-right: 5vw;
   background-color : rgb(231, 221, 221);
@@ -116,6 +117,8 @@ $mainHeight: 600px;
 
 .container2{
   @include container();
+  height:65vw;
+  margin-top:10vh;
   .overlay{
     @include overlayEffect();
   }
@@ -127,46 +130,83 @@ $mainHeight: 600px;
     background-image: url("../public/imgs/img2.jpg");
     background-size: 100% 100%;  
   }
-}
+  &::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
 
-
-.container3{
-  width: 100%;
-  height: 100%;
-  padding: 10vw;
-  position: absolute;
-}
-
-.animation{
-  background-color: rgb(236, 240, 243);
-  box-shadow: 0px 10px 30px rgb(44, 42, 42);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  div{
+  .container3{
     width: 100%;
     height: 100%;
-    display: none;
+    padding : 10vw;
+    position: absolute;
+    .animation{
+      background-color: rgb(236, 240, 243);
+      box-shadow: 0px 10px 30px rgb(44, 42, 42);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow:hidden;
+      div{
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      .video{
+        width:100%;
+        height:100%;
+        display: none;
+        object-fit: fill;
+      }
+      .show{
+        display: block;
+      }
+    }
+    .start{
+      animation-name: animationScreen;
+      animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+      animation-duration: 4s;
+      animation-fill-mode: forwards;
+    }
   }
-  .video{
+  .animationButton{
+    bottom: 0;
+    position:absolute;
     width:100%;
-    height: 100%;
-    display: none;
-    object-fit: fill;
+    height:10vw;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    div{
+      flex-grow: 1;
+    }
+    span{
+      flex-grow: 0.5;
+      width: 12vw;
+      padding: 1vw;
+      font-size: 4vw;
+      background-color: transparent;
+      color: aliceblue;
+      border: 1px solid aliceblue;
+      border-radius: 5vw;
+      text-align: center;
+      opacity:0.5;
+      transition: all 1s;
+      &:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+    &::after{
+      content: "";
+      clear:both;
+      display: block;
+    }
   }
-  .show{
-    display: block;
-  }
-}
-
-
-
-.start{
-  animation-name: animationScreen;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
 }
 
 @keyframes animationScreen {
@@ -184,43 +224,123 @@ $mainHeight: 600px;
   }
 }
 
-.moveRight{
-  width:100%;
-}
-
-.moveDown{
-  height:100%;
-}
-
-.animationButton{
-  bottom: 0;
+@mixin object {
+  width: 10vw;
+  height: 10vw;
   position:absolute;
-  width:100%;
-  height:10vw;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 1s;
-  div{
-    flex-grow: 1;
+  display: none;
+}
+
+
+
+.container4{
+  @include container();
+  .object1{
+    @include object();
+    height:6vw;
+    top:10%;
   }
-  span{
-    flex-grow: 0.5;
-    width: 12vw;
-    padding: 1vw;
-    font-size: 4vw;
-    background-color: transpar ent;
-    color: aliceblue;
-    border: 1px solid aliceblue;
-    border-radius: 5vw;
-    text-align: center;
-    opacity:0.5;
-    transition: all 1s;
-    &:hover{
-      cursor: pointer;
-      transform: scale(1.2);
-      opacity: 1;
+  .object2{
+    @include object();
+    width:6vw;
+    bottom: 10%;
+    right: 0;
+  }
+  .object3{
+    @include object();
+    right: 10%;
+    background-color: rgb(127, 104, 211);
+    opacity: 0;
+    transform: translate(-29vw, 28vw);
+  }
+  &::after{
+    content: "";
+    clear:both;
+    display: block;
+  }
+
+  .animation1{
+    display: block;
+    animation-name: objectAnimation1; 
+    background-color: aqua;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier();
+
+  }
+  .animation2{
+    display: block;
+    animation-name: objectAnimation2;
+      background-color: rgb(221, 233, 55);
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier();
+
+  }
+  .animation3{
+    display: block;
+    animation-duration: 5s;
+    animation-name: objectAnimation3;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier();
+  }
+}
+
+.container5{
+  @include container();
+  height: 120vw;
+}
+
+@keyframes objectAnimation1 {
+  0%{
+
+  }
+  50%{
+    transform: translateX(48vw) skewX(45deg);
+  }
+  100%{
+    transform: translate(48vw, 16vw) skewX(45deg);
+  }
+}
+
+@keyframes objectAnimation2 {
+  0%{
+
+  }
+  50%{
+    transform: translateX(-50vw) skewY(45deg);
+  }
+  100%{
+    transform: translate(-50vw, -10vw) skewY(45deg);
+  }
+}
+
+@keyframes objectAnimation3 {
+  0%{
+
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+@media screen and (max-width:576px){
+  .container2{
+    .container3{
+      padding:0;
+      padding-bottom: 10vw;
+      .animation{
+        .video{
+          height: 50vw;
+        }
+      }
     }
   }
 }

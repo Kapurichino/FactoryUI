@@ -1,0 +1,23 @@
+.topBtn{
+    position: fixed;
+    bottom: 8%;
+    right: 5%;
+    color: rgb(218, 203, 203);
+    background-color: rgb(88, 118, 252);
+    font-size: 4vw;
+    opacity: 0.5;
+    display: none;
+    border: none;
+    border-radius: 50%;
+    z-index: 20;
+    transition: all 0.5s;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.active{
+    display: inline;
+}
+

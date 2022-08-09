@@ -1,8 +1,10 @@
 import Gear from './components/Gear.js';
 import MySwiper from './components/MySwiper.js';
 import Progressbar from './components/ProgressBar.js';
+import ScrollTop from './components/ScrollTop.js';
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
+import { entries } from 'lodash';
 
 // timer변수가 로컬이고 각 함수 호출 후 해당 값이 손실 될 수 있다.
 // 따라서, 유지하기 위해 함수 외부에 놓아야 한다.
@@ -13,6 +15,29 @@ function App() {
   const [visible, setVisible] = useState("");
   const [video, setVideo] = useState("");
   const videoRef = useRef();
+  const boxRef = useRef();
+  const object1Ref = useRef();
+  const object2Ref = useRef();
+  const object3Ref = useRef();
+
+    useEffect(()=>{
+      const observer = new IntersectionObserver((entries) =>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            observer.unobserve(entry.target);
+            object1Ref.current.classList.add("animation1");
+            object2Ref.current.classList.add("animation2");
+            object3Ref.current.classList.add("animation3");
+          }
+        })
+      } ,{root:null, rootMargin:"0px", threshold:0.9})
+      observer.observe(boxRef.current);
+    })
+    
+  // const observeBox = (observer ,items) =>{
+  //   const lastItem = items[items.length - 1];
+  //   io.observe(lastItem);
+  // }
 
   useEffect(()=>{
     if (start == "start")
@@ -23,10 +48,12 @@ function App() {
       setVideo("");
     }
   },[start])
+
   return (
     <div style={{ overflow: "hidden" }}>
       <Progressbar/>
       <Gear/>
+      <ScrollTop/>
       <div className={"navBar"}>
         <div className={"listContainer"}>
           <ul>
@@ -50,12 +77,12 @@ function App() {
       <div className={"postBox"}>
         <MySwiper/>
       </div>
-      <div className={"container2"} style={{height:"60vw", marginTop:"20vh"}}>
+      <div className={"container2"}>
         <div className={"subBg"}/>
         <div className={"overlay"}/> 
         <div className={"container3"}>
           <div className={`animation ${start}`} ref={videoRef}>
-            <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+          <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
           </div>  
         </div>
         <div className={"animationButton"}>
@@ -64,6 +91,13 @@ function App() {
           <span onClick={()=>{setStart("")}} style={{marginRight: "10vw", }}>CLOSE</span>
         </div>
       </div>
+      <div className={"container4"} ref={boxRef}>
+          <div className={"object1"} ref={object1Ref}></div>
+          <div className={"object2"} ref={object2Ref}></div>
+          <div className={"object3"} ref={object3Ref}></div>    
+      </div>
+      <div className={"container5"}></div>
+
     </div>
   );
 }
