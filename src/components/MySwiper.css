@@ -23,7 +23,7 @@ div {
   text-align: center;
   background-color: rgb(226, 233, 245);
   border: 3px solid rgb(243, 128, 128);
-  box-shadow: 0px 15px 20px rgb(179, 119, 119);
+  box-shadow: 0px 15px 10px rgb(179, 119, 119);
 }
 .content img {
   width: 100%;
@@ -41,10 +41,6 @@ div {
 .swiper-slide {
   padding: 3vw;
   padding-top: 20px;
-  transition: all 1s;
-}
-.swiper-slide:hover {
-  transform: scale(1.05);
 }
 
 .swiper-pagination-bullet {

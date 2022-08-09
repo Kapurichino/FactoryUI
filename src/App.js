@@ -14,25 +14,28 @@ function App() {
   const [start, setStart] = useState("");
   const [visible, setVisible] = useState("");
   const [video, setVideo] = useState("");
+  const [show, setShow] = useState("");
   const videoRef = useRef();
   const boxRef = useRef();
   const object1Ref = useRef();
   const object2Ref = useRef();
   const object3Ref = useRef();
 
-    useEffect(()=>{
-      const observer = new IntersectionObserver((entries) =>{
-        entries.forEach((entry)=>{
-          if(entry.isIntersecting){
-            observer.unobserve(entry.target);
-            object1Ref.current.classList.add("animation1");
-            object2Ref.current.classList.add("animation2");
-            object3Ref.current.classList.add("animation3");
-          }
-        })
-      } ,{root:null, rootMargin:"0px", threshold:0.9})
-      observer.observe(boxRef.current);
-    })
+
+  useEffect(()=>{
+    const observer = new IntersectionObserver((entries) =>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          observer.unobserve(entry.target);
+          object1Ref.current.classList.add("animation1");
+          object2Ref.current.classList.add("animation2");
+          object3Ref.current.classList.add("animation3");
+          setTimeout(()=>{(setShow("show"))}, 5000);
+        }
+      })
+    } ,{root:null, rootMargin:"0px", threshold:0.9})
+    observer.observe(boxRef.current);
+  }, [])
     
   // const observeBox = (observer ,items) =>{
   //   const lastItem = items[items.length - 1];
@@ -82,7 +85,8 @@ function App() {
         <div className={"overlay"}/> 
         <div className={"container3"}>
           <div className={`animation ${start}`} ref={videoRef}>
-          <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+          <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} style={{ width:"100%",
+        height:"100%"}}></iframe>
           </div>  
         </div>
         <div className={"animationButton"}>
@@ -94,7 +98,20 @@ function App() {
       <div className={"container4"} ref={boxRef}>
           <div className={"object1"} ref={object1Ref}></div>
           <div className={"object2"} ref={object2Ref}></div>
-          <div className={"object3"} ref={object3Ref}></div>    
+          <div className={"object3"} ref={object3Ref}></div>
+          <div className={"list"}>
+            <ul>
+              <li>
+                <span className={show}>Challenge</span>
+              </li>
+              <li>
+                <span className={show} style={{backgroundColor:"rgb(255, 239, 213)", transitionDelay:"1s"}}>Patience</span>
+              </li>
+              <li>
+                <span className={show} style={{backgroundColor:"rgb(234, 255, 234)", transitionDelay:"2s"}}>Passion</span>
+              </li>
+            </ul>
+          </div>
       </div>
       <div className={"container5"}></div>
 
