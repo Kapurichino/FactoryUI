@@ -1,12 +1,13 @@
 import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { throttle } from "lodash";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ScrollTop.css";
 
-export default function ScrollTop(){
+export default function ScrollTop(props){
     const [scrollToTop, setScrollToTop] = useState(0);
     const [btnStatus, setBtnStatus] = useState(false);
+    const eleRef = useRef();
     
     const updateFollow = ()=>{
         setScrollToTop(window.scrollY);
@@ -15,21 +16,19 @@ export default function ScrollTop(){
     const handleFollow = throttle(updateFollow, 150);
 
     const handleTop = ()=>{
-        window.scrollTo({
-            top:0
-        });
+        props.scroll.scrollToTop({duration:300});
         setScrollToTop(0);
     }
 
     useEffect(()=>{
-        window.addEventListener('scroll', handleFollow)
+        window.addEventListener('scroll', handleFollow, {passive:true})
         return ()=>{
-            window.removeEventListener('scroll', handleFollow)
+            window.removeEventListener('scroll', handleFollow, {passive:true})
         };
     })
     return(
         <>
-            <FontAwesomeIcon icon={faChevronCircleUp} className={btnStatus ? "topBtn active" : "topBtn"} onClick={handleTop}/>
+            <FontAwesomeIcon icon={faChevronCircleUp} ref = {eleRef} className={btnStatus ? "topBtn active" : "topBtn"} onClick={handleTop}/>
         </>
     );
 }

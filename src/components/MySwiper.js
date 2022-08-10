@@ -32,13 +32,16 @@ export default function MySwiper(){
         <div className={"swiperContainer"}>
             <Swiper
                  spaceBetween={16}
-                 slidesPerView={1}
+                 slidesPerView={"auto"}
                  slidesPerGroup={1}
                  pagination={{ dynamicBullets: true, clickable: true }}
                  scrollbar={{ draggable: true }}
                  loop
                  modules={[Pagination, Navigation]}
                  breakpoints={{
+                  0:{
+                    slidesPerView:1,
+                  },
                   576:{
                     slidesPerView:2,
                   },

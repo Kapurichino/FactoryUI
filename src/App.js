@@ -2,9 +2,11 @@ import Gear from './components/Gear.js';
 import MySwiper from './components/MySwiper.js';
 import Progressbar from './components/ProgressBar.js';
 import ScrollTop from './components/ScrollTop.js';
+import Navbar from './components/Navbar.js';
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
-import { entries } from 'lodash';
+import * as Scroll from 'react-scroll';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 // timer변수가 로컬이고 각 함수 호출 후 해당 값이 손실 될 수 있다.
 // 따라서, 유지하기 위해 함수 외부에 놓아야 한다.
@@ -15,15 +17,19 @@ function App() {
   const [visible, setVisible] = useState("");
   const [video, setVideo] = useState("");
   const [show, setShow] = useState("");
-  const videoRef = useRef();
+  
+
+  
   const boxRef = useRef();
   const object1Ref = useRef();
   const object2Ref = useRef();
   const object3Ref = useRef();
 
+  let scroll = Scroll.animateScroll;
+
 
   useEffect(()=>{
-    const observer = new IntersectionObserver((entries) =>{
+    const observer =  new  IntersectionObserver((entries) =>{
       entries.forEach((entry)=>{
         if(entry.isIntersecting){
           observer.unobserve(entry.target);
@@ -33,10 +39,9 @@ function App() {
           setTimeout(()=>{(setShow("show"))}, 5000);
         }
       })
-    } ,{root:null, rootMargin:"0px", threshold:0.9})
+    } ,{root:null, rootMargin:"0px", threshold:0.7})
     observer.observe(boxRef.current);
   }, [])
-    
   // const observeBox = (observer ,items) =>{
   //   const lastItem = items[items.length - 1];
   //   io.observe(lastItem);
@@ -56,17 +61,8 @@ function App() {
     <div style={{ overflow: "hidden" }}>
       <Progressbar/>
       <Gear/>
-      <ScrollTop/>
-      <div className={"navBar"}>
-        <div className={"listContainer"}>
-          <ul>
-            <li><span>정보</span></li>
-            <li><span>서비스</span></li>
-            <li><span>스토리</span></li>
-            <li><span>약속</span></li>
-          </ul>
-        </div>
-      </div>
+      <ScrollTop scroll={scroll}/>
+      <Navbar/>
       <div className={"container1"}>           
         <div className={"mainBg"}/> 
         <div className={"overlay"}/>
@@ -84,13 +80,17 @@ function App() {
         <div className={"subBg"}/>
         <div className={"overlay"}/> 
         <div className={"container3"}>
-          <div className={`animation ${start}`} ref={videoRef}>
-          <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} style={{ width:"100%",
+          <div className={`animation ${start}`}>
+          <iframe className={`video ${visible}`} src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} style={{ width:"100%",
         height:"100%"}}></iframe>
           </div>  
         </div>
         <div className={"animationButton"}>
-          <span onClick={()=>{setStart("start"); videoRef.current.scrollIntoView();}} style={{marginLeft: "55vw"}}>OPEN</span>
+          <span onClick={()=>{
+            setStart("start"); 
+            let element = document.querySelector('.animation', {passive:true});
+            let elementTop = window.pageYOffset + element.getBoundingClientRect().top;
+            scroll.scrollTo(parseInt(elementTop), {duration:300})}} style={{marginLeft: "55vw"}}>OPEN</span>
           <div/>
           <span onClick={()=>{setStart("")}} style={{marginRight: "10vw", }}>CLOSE</span>
         </div>
