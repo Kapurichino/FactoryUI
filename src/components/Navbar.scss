@@ -1,3 +1,100 @@
+@mixin overlayEffect(){
+  width:100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(48, 28, 17);
+  opacity: 0.4;
+}
+
+.openIcon{
+  z-index: 28;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  background-color: rgb(88, 118, 252);
+  color: rgb(218, 203, 203);
+  border-radius: 50%;
+  font-size: 50px;
+  opacity: 0.5;
+  &:hover{
+    cursor: pointer;
+  }
+  display: none;
+}
+
+
+  .menu{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 30;
+    transform: translateX(100vw);
+    transition: all 0.5s;
+    .menuBar{
+      z-index: 29;
+      position: absolute;
+      right: 0;
+      width:70%;
+      height: 100%;
+      background-color: rgb(250, 226, 148); 
+      padding-top: 5vw;
+      padding-right: 10vw;
+      .menuContent{
+        width: 100%;
+        position: relative;
+        .closeIcon{
+          color: rgb(88, 118, 252);
+          opacity: 0.5;
+          position: absolute;
+          right: 0;
+          font-size: 50px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        ul{
+          width: 50%;
+          margin-top: 50px;
+          margin-left: 10vw;
+          position: absolute;
+          list-style: none;
+          li{
+            span{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+              text-align: center;
+              line-height: 16vw;
+              font-size: 5vw;
+              transition: all 1s;
+              &:hover{
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+      
+    }
+    .overlay{
+      @include overlayEffect();
+    }
+    &::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+
+.showMenu{
+  transform: translateX(0vw);
+}
+
+
+
+
 .navBar{
     margin-top: 50px;
     width: 100%;
@@ -40,6 +137,9 @@
     }
   }
 @media screen and (max-width:768px){
+  .openIcon{
+    display: inline-block;
+  }
   .navBar{
     height: 5vh;
       .navContent{
@@ -49,6 +149,9 @@
 }
 
 @media screen and (min-width:768px){
+  .menu{
+    display: none;
+  }
   .navBar{
       &:hover{
         height: 20.5rem;

@@ -106,9 +106,9 @@ div {
 }
 .container2 .container3 .animation .video {
   position: absolute;
-  display: none;
   -o-object-fit: fill;
      object-fit: fill;
+  display: none;
 }
 .container2 .container3 .animation .show {
   display: block;

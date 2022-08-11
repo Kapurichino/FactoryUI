@@ -109,9 +109,8 @@ $mainHeight: 600px;
       }
       .video{
         position: absolute; 
-       
-        display: none;
         object-fit: fill;
+        display: none;
       }
       .show{
         display: block;

@@ -21,9 +21,9 @@ export default function ScrollTop(props){
     }
 
     useEffect(()=>{
-        window.addEventListener('scroll', handleFollow, {passive:true})
+        window.addEventListener('scroll', handleFollow)
         return ()=>{
-            window.removeEventListener('scroll', handleFollow, {passive:true})
+            window.removeEventListener('scroll', handleFollow)
         };
     })
     return(
