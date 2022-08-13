@@ -31,17 +31,27 @@
   background-color: #f1d4ad;
   padding-top: 5vw;
   padding-right: 10vw;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Chrome, Safari, Opera*/
+}
+.menu .menuBar::-webkit-scrollbar {
+  display: none;
 }
 .menu .menuBar .menuContent {
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
 }
 .menu .menuBar .menuContent .closeIcon {
   color: rgb(88, 118, 252);
   opacity: 0.5;
-  position: fixed;
-  right: 40px;
+  position: absolute;
+  right: 20px;
   top: 20px;
   font-size: 50px;
 }
