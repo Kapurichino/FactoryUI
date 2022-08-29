@@ -3,7 +3,7 @@ import MySwiper from './components/MySwiper.js';
 import Progressbar from './components/ProgressBar.js';
 import ScrollTop from './components/ScrollTop.js';
 import Navbar from './components/Navbar.js';
-import Menubar from './components/Menubar.js';
+import Menubar from './components/Menubar/Menubar.js';
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import * as Scroll from 'react-scroll';
