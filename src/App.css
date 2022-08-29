@@ -9,8 +9,8 @@ div {
 
 .container1 {
   width: 100%;
-  height: 50vw;
   position: relative;
+  height: 600px;
 }
 .container1 .overlay {
   width: 100%;
@@ -29,12 +29,16 @@ div {
 .container1 .mainText {
   position: absolute;
   width: 100%;
+  height: 100%;
   margin: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container1 .mainText p {
   margin: 0 auto;
-  font-size: 6vw;
+  font-size: 4rem;
   color: rgb(222, 226, 230);
   text-shadow: 0px 8px 5px rgb(0, 0, 0);
   font-family: "Gugi", cursive;
@@ -49,30 +53,21 @@ div {
   clear: both;
 }
 
-.middle {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .postBox {
   width: 100%;
-  height: 60vh;
-  margin-top: 10vh;
+  height: 500px;
+  margin-top: 70px;
   padding: 1px;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: rgb(231, 221, 221);
 }
 
 .container2 {
   width: 100%;
-  height: 50vw;
   position: relative;
-  margin-top: 10vh;
-  transition: all 1s;
+  height: 800px;
+  margin-top: 70px;
 }
 .container2 .overlay {
   width: 100%;
@@ -90,8 +85,8 @@ div {
 }
 .container2 .container3 {
   width: 100%;
-  height: 100%;
-  padding: 10vw;
+  height: 90%;
+  padding: 5vw;
   position: absolute;
 }
 .container2 .container3 .animation {
@@ -106,8 +101,8 @@ div {
 }
 .container2 .container3 .animation .video {
   position: absolute;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: none;
 }
 .container2 .container3 .animation .show {
@@ -118,24 +113,22 @@ div {
           animation-name: animationScreen;
   -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
           animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 .container2 .animationButton {
-  bottom: 0;
+  bottom: 0px;
   position: absolute;
   width: 100%;
-  height: 10vw;
+  height: 10%;
+  margin-bottom: 3%;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 1s;
-}
-.container2 .animationButton div {
-  flex-grow: 1;
 }
 .container2 .animationButton span {
   flex-grow: 0.5;
@@ -146,13 +139,15 @@ div {
   color: aliceblue;
   border: 1px solid aliceblue;
   border-radius: 5vw;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.5;
   transition: all 1s;
 }
 .container2 .animationButton span:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
   opacity: 1;
 }
 .container2::after {
@@ -192,10 +187,11 @@ div {
 }
 .container4 {
   width: 100%;
-  height: 50vw;
   position: relative;
   width: 100vw;
+  height: 50vw;
   padding: 1px;
+  margin-top: 70px;
 }
 .container4 .object1 {
   width: 25vw;
@@ -203,7 +199,6 @@ div {
   position: absolute;
   display: none;
   height: 6vw;
-  top: 10%;
 }
 .container4 .object2 {
   width: 25vw;
@@ -211,7 +206,7 @@ div {
   position: absolute;
   display: none;
   width: 6vw;
-  bottom: 10%;
+  bottom: 20%;
   right: 0;
 }
 .container4 .object3 {
@@ -219,18 +214,18 @@ div {
   height: 25vw;
   position: absolute;
   display: none;
-  right: 10%;
+  right: 15%;
   background-color: rgb(127, 104, 211);
   opacity: 0;
-  transform: translate(-29vw, 28vw);
+  transform: translate(-29vw, 19vw);
 }
 .container4 .animation1 {
   display: block;
   -webkit-animation-name: objectAnimation1;
           animation-name: objectAnimation1;
   background-color: aqua;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -239,15 +234,15 @@ div {
   -webkit-animation-name: objectAnimation2;
           animation-name: objectAnimation2;
   background-color: rgb(221, 233, 55);
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 .container4 .animation3 {
   display: block;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-name: objectAnimation3;
           animation-name: objectAnimation3;
   -webkit-animation-fill-mode: forwards;
@@ -256,8 +251,8 @@ div {
 .container4 .list {
   width: 25vw;
   position: absolute;
-  right: 13vw;
-  top: 50%;
+  right: 20vw;
+  top: 30%;
 }
 .container4 .list ul {
   width: 100%;
@@ -267,7 +262,7 @@ div {
 .container4 .list ul li {
   width: 100%;
   padding: 1vw;
-  transition: all 1s;
+  transition: all 0.3s ease-in-out;
 }
 .container4 .list ul li span {
   display: inline-block;
@@ -275,9 +270,10 @@ div {
   border-radius: 20px;
   padding: 1vw;
   text-align: center;
+  font-family: "Gugi", cursive;
   background-color: rgb(234, 254, 255);
   transform: translateX(100vw);
-  transition: all 1s;
+  transition: all 1s ease-in-out;
   font-size: 3vw;
   border-radius: 100px;
 }
@@ -295,41 +291,46 @@ div {
 
 .container5 {
   width: 100%;
-  height: 50vw;
   position: relative;
 }
 
 @-webkit-keyframes objectAnimation1 {
+  0% {
+    transform: translateY(5vw) skewX(45deg);
+  }
   50% {
-    transform: translateX(33vw) skewX(45deg);
+    transform: translate(28vw, 5vw) skewX(45deg);
   }
   100% {
-    transform: translate(33vw, 16vw) skewX(45deg);
+    transform: translate(28vw, 12vw) skewX(45deg);
   }
 }
 
 @keyframes objectAnimation1 {
+  0% {
+    transform: translateY(5vw) skewX(45deg);
+  }
   50% {
-    transform: translateX(33vw) skewX(45deg);
+    transform: translate(28vw, 5vw) skewX(45deg);
   }
   100% {
-    transform: translate(33vw, 16vw) skewX(45deg);
+    transform: translate(28vw, 12vw) skewX(45deg);
   }
 }
 @-webkit-keyframes objectAnimation2 {
   50% {
-    transform: translateX(-65vw) skewY(45deg);
+    transform: translateX(-70vw) skewY(45deg);
   }
   100% {
-    transform: translate(-65vw, 5vw) skewY(45deg);
+    transform: translate(-70vw, 1vw) skewY(45deg);
   }
 }
 @keyframes objectAnimation2 {
   50% {
-    transform: translateX(-65vw) skewY(45deg);
+    transform: translateX(-70vw) skewY(45deg);
   }
   100% {
-    transform: translate(-65vw, 5vw) skewY(45deg);
+    transform: translate(-70vw, 1vw) skewY(45deg);
   }
 }
 @-webkit-keyframes objectAnimation3 {
@@ -349,12 +350,11 @@ div {
   }
 }
 @media screen and (max-width: 576px) {
+  .container1 .mainText p {
+    font-size: 3rem;
+  }
   .container2 {
     height: 400px;
-  }
-  .container2 .container3 {
-    padding: 0;
-    padding-bottom: 10vw;
   }
   .container4 .list {
     right: 20vw;
@@ -370,23 +370,18 @@ div {
     height: 600px;
   }
 }
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1200px) {
   .container2 {
     height: 700px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .container2 {
-    height: 850px;
-  }
-}
 @media screen and (min-width: 1440px) {
   .container2 {
-    height: 1000px;
+    height: 800px;
   }
 }
-@media screen and (min-width: 1680px) {
+@media screen and (min-width: 1920px) {
   .container2 {
-    height: 1250px;
+    height: 1000px;
   }
 }/*# sourceMappingURL=App.css.map */

@@ -13,7 +13,6 @@ $mainHeight: 600px;
 
 @mixin container() {
   width: 100%;
-  height : 50vw;
   position: relative;
 }
 
@@ -26,6 +25,7 @@ $mainHeight: 600px;
 }
 .container1{
   @include container();
+  height: 600px;
   .overlay{
     @include overlayEffect();
   }
@@ -39,11 +39,15 @@ $mainHeight: 600px;
   .mainText{
     position: absolute;
     width: 100%;
+    height: 100%;
     margin:auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     p{
       margin:0 auto;
-      font-size: 6vw;
+      font-size: 4rem;
       color: rgb(222, 226, 230);
       text-shadow: 0px 8px 5px rgb(0, 0, 0);
       font-family: 'Gugi', cursive;
@@ -60,43 +64,34 @@ $mainHeight: 600px;
   }
 }
 
-
-.middle{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .postBox{
   width: 100%;
-  height: 60vh;
-  margin-top: 10vh;
+  height: 500px;
+  margin-top: 70px;
   padding:1px;
-  padding-left:5vw;
-  padding-right: 5vw;
+  padding-left:50px;
+  padding-right: 50px;
   background-color : rgb(231, 221, 221);
 }
 
 .container2{
   @include container();
-  margin-top:10vh;
+  height:800px;
+  margin-top: 70px;
   .overlay{
     @include overlayEffect();
   }
-  transition: all 1s;
   .subBg{
     width: 100%;
     height: 100%;
     position: absolute;
     background-image: url("../public/imgs/img2.jpg");
-    background-size: 100% 100%;  
+    background-size:100% 100%;  
   }
   .container3{
     width: 100%;
-    height: 100%;
-    padding : 10vw;
+    height: 90%;
+    padding:5vw;
     position: absolute;
     .animation{
       background-color: rgb(236, 240, 243);
@@ -109,7 +104,7 @@ $mainHeight: 600px;
       }
       .video{
         position: absolute; 
-        object-fit: fill;
+        object-fit: contain;
         display: none;
       }
       .show{
@@ -119,38 +114,38 @@ $mainHeight: 600px;
     .start{
       animation-name: animationScreen;
       animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-      animation-duration: 4s;
+      animation-duration: 3s;
       animation-fill-mode: forwards;
     }
   }
   .animationButton{
-    bottom: 0;
+    bottom: 0px;
     position:absolute;
     width:100%;
-    height:10vw;
+    height:10%;
+    margin-bottom: 3%;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 1s;
-    div{
-      flex-grow: 1;
-    }
     span{
       flex-grow: 0.5;
       width: 12vw;
-      padding: 1vw;
+      padding: 1vw;  
       font-size: 4vw;
       background-color: transparent;
       color: aliceblue;
       border: 1px solid aliceblue;
       border-radius: 5vw;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       opacity:0.5;
       transition: all 1s;
       &:hover{
         cursor: pointer;
-        transform: scale(1.2);
+        transform: scale(1.1);
         opacity: 1;
       }
     }
@@ -198,24 +193,25 @@ $mainHeight: 600px;
 .container4{
   @include container();
   width: 100vw;
+  height:50vw;
   padding:1px;
+  margin-top: 70px;
   .object1{
     @include object();
     height:6vw;
-    top:10%;
   }
   .object2{
     @include object();
     width:6vw;
-    bottom: 10%;
+    bottom: 20%;
     right: 0;
   }
   .object3{
     @include object();
-    right: 10%;
+    right: 15%;
     background-color: rgb(127, 104, 211);
     opacity: 0;
-    transform: translate(-29vw, 28vw);
+    transform: translate(-29vw, 19vw);
   }
   
 
@@ -223,23 +219,21 @@ $mainHeight: 600px;
     display: block;
     animation-name: objectAnimation1; 
     background-color: aqua;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
-
-
   }
   .animation2{
     display: block;
     animation-name: objectAnimation2;
     background-color: rgb(221, 233, 55);
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
 
 
   }
   .animation3{
     display: block;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-name: objectAnimation3;
     animation-fill-mode: forwards;
 
@@ -248,8 +242,8 @@ $mainHeight: 600px;
   .list{
     width:25vw;
     position:absolute;
-    right: 13vw;
-    top:50%;
+    right: 20vw;
+    top:30%;
     ul{
       width:100%;
       list-style: none;
@@ -257,13 +251,14 @@ $mainHeight: 600px;
       li{
         width: 100%;
         padding : 1vw;
-        transition: all 1s;
+        transition: all 0.3s ease-in-out;
         span{
           @include spanStyle();
           text-align: center;
+          font-family: 'Gugi', cursive;
           background-color: rgb(234, 254, 255);
           transform: translateX(100vw);
-          transition: all 1s;
+          transition: all 1s ease-in-out;
           font-size: 3vw;
           border-radius: 100px;
         }
@@ -292,13 +287,13 @@ $mainHeight: 600px;
 
 @keyframes objectAnimation1 {
   0%{
-
+    transform: translateY(5vw) skewX(45deg);
   }
   50%{
-    transform: translateX(33vw) skewX(45deg);
+    transform: translate(28vw, 5vw) skewX(45deg);
   }
   100%{
-    transform: translate(33vw, 16vw) skewX(45deg);
+    transform: translate(28vw, 12vw) skewX(45deg);
   }
 }
 
@@ -307,10 +302,10 @@ $mainHeight: 600px;
 
   }
   50%{
-    transform: translateX(-65vw) skewY(45deg);
+    transform: translateX(-70vw) skewY(45deg);
   }
   100%{
-    transform: translate(-65vw, 5vw) skewY(45deg);
+    transform: translate(-70vw, 1vw) skewY(45deg);
   }
 }
 
@@ -330,12 +325,15 @@ $mainHeight: 600px;
 
 
 @media screen and (max-width:576px){
+  .container1{
+    .mainText{
+      p{
+        font-size: 3rem;
+      }
+    }
+  }
   .container2{
     height: 400px;
-    .container3{
-      padding:0;
-      padding-bottom: 10vw;
-    }
   }
 
   .container4{
@@ -345,34 +343,29 @@ $mainHeight: 600px;
   }
 }
 
-@media screen and (min-width:576px){
+@media screen and (min-width:576px) {
   .container2{
     height: 500px;
   }
 }
-
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
   .container2{
     height: 600px;
   }
 }
-@media screen and (min-width:998px){
+@media screen and (min-width:1200px) {
   .container2{
     height: 700px;
   }
 }
-@media screen and (min-width:1200px){
+@media screen and (min-width:1440px) {
   .container2{
-    height: 850px;
+    height: 800px;
   }
 }
-@media screen and (min-width:1440px){
+@media screen and (min-width:1920px) {
   .container2{
     height: 1000px;
   }
 }
-@media screen and (min-width:1680px){
-  .container2{
-    height: 1250px;
-  }
-}
+

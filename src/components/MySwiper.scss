@@ -7,6 +7,8 @@ div{
     height:100%;
     background-color:transparent;
     border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 60px;
 }
 
 .swiper-container{
@@ -16,8 +18,8 @@ div{
 
 .content{
     padding:10px;
-    width: 100%;
-    height: 50vh;
+    width: 90%;
+    height: 90%;
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
@@ -36,6 +38,10 @@ div{
         font-size:25px;
         opacity: 0.4;
     }
+    transition: 0.5s ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 
 .swiper-wrapper {
@@ -43,8 +49,9 @@ div{
 }
 
 .swiper-slide{
-    padding: 3vw;
-    padding-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .swiper-pagination-bullet{

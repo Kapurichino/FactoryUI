@@ -3,10 +3,10 @@ import MySwiper from './components/MySwiper.js';
 import Progressbar from './components/ProgressBar.js';
 import ScrollTop from './components/ScrollTop.js';
 import Navbar from './components/Navbar.js';
+import Menubar from './components/Menubar.js';
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import * as Scroll from 'react-scroll';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 // timer변수가 로컬이고 각 함수 호출 후 해당 값이 손실 될 수 있다.
 // 따라서, 유지하기 위해 함수 외부에 놓아야 한다.
@@ -36,7 +36,7 @@ function App() {
           object1Ref.current.classList.add("animation1");
           object2Ref.current.classList.add("animation2");
           object3Ref.current.classList.add("animation3");
-          setTimeout(()=>{(setShow("show"))}, 5000);
+          setTimeout(()=>{(setShow("show"))}, 3000);
         }
       })
     } ,{root:null, rootMargin:"0px", threshold:0.7})
@@ -49,7 +49,7 @@ function App() {
 
   useEffect(()=>{
     if (start == "start")
-      timerID = setTimeout(()=>{(setVisible("show")); setVideo("https://www.youtube.com/embed/93iQRtqhWPM")},4500);
+      timerID = setTimeout(()=>{(setVisible("show")); setVideo("https://www.youtube.com/embed/93iQRtqhWPM")},3100);
     else{
       clearTimeout(timerID);
       setVisible("");
@@ -62,11 +62,12 @@ function App() {
       <Progressbar/>
       <Gear/>
       <ScrollTop scroll={scroll}/>
+      <Menubar/>
       <Navbar/>
       <div className={"container1"}>           
         <div className={"mainBg"}/> 
         <div className={"overlay"}/>
-        <div className={"mainText middle"}>
+        <div className={"mainText"}>
           <div>
             <p>Innovative Design</p>
             <p>Factory UI</p>
@@ -90,7 +91,9 @@ function App() {
             setStart("start"); 
             let element = document.querySelector('.animation', {passive:true});
             let elementTop = window.pageYOffset + element.getBoundingClientRect().top;
-            scroll.scrollTo(parseInt(elementTop), {duration:300})}} style={{marginLeft: "55vw"}}>OPEN</span>
+            scroll.scrollTo(parseInt(elementTop), {duration:300})}} style={{marginLeft: "50vw", marginRight:"3vw"}}>
+            OPEN
+          </span>
           <div/>
           <span onClick={()=>{setStart("")}} style={{marginRight: "10vw", }}>CLOSE</span>
         </div>

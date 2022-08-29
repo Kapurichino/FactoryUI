@@ -36,6 +36,7 @@ export default function MySwiper(){
                  slidesPerGroup={1}
                  pagination={{ dynamicBullets: true, clickable: true }}
                  scrollbar={{ draggable: true }}
+                 centeredSlides={true}
                  loop
                  modules={[Pagination, Navigation]}
                  breakpoints={{

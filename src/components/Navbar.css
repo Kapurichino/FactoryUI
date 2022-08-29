@@ -28,7 +28,7 @@
   right: 0;
   width: 70%;
   height: 100%;
-  background-color: #f1d4ad;
+  background: linear-gradient(to bottom, rgb(255, 83, 83), rgb(255, 210, 128));
   padding-top: 5vw;
   padding-right: 10vw;
   overflow: scroll;
@@ -67,8 +67,9 @@
   transition: all 1s;
 }
 .menu .menuBar .menuContent ul li span {
+  color: aliceblue;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   text-align: center;
