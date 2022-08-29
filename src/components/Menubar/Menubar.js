@@ -11,10 +11,12 @@ const MenuIcon = styled(RiMenuFill)`
     position:fixed;
     top:5%;
     right:5%;
-    font-size: 2rem;
+    font-size: 3rem;
     z-index: 10;
+    color: rgb(88, 118, 252);
     background-color: transparent;
-    color:skyblue;
+    opacity: 0.6;
+    border-radius: 10%;
     &:hover{
         cursor: pointer;
     }
@@ -27,9 +29,10 @@ const CloseIcon = styled(RiCloseFill)`
     position: absolute;
     top:2%;
     right:2%;
-    font-size: 3rem;
+    font-size: 4rem;
     background-color: transparent;
-    color:skyblue;
+    color:aliceblue;
+    opacity: 0.6;
     &:hover{
         cursor: pointer;
     }
@@ -62,7 +65,7 @@ const SidebarWrapper = styled.div`
 `
 
 const ItemContainer = styled.div`
-    margin-top: 15%;
+    margin-top: 20%;
 `
 
 const Overlay = styled.div`

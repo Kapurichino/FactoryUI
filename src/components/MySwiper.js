@@ -13,7 +13,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar]);
 const posts = [
     {
       id:1,
-      title: "Naturally",
+      title: "Natural",
       description: "\"자연스러운 디자인\""
     },
     {
@@ -23,8 +23,13 @@ const posts = [
     },
     {
       id:3,
-      title: "Sensual",
+      title: "Sensational",
       description: "\"감각적인 디자인\""
+    },
+    {
+      id:4,
+      title: "Attractive",
+      description: "\"매력적인 디자인\""
     }
   ]
 export default function MySwiper(){
@@ -36,7 +41,6 @@ export default function MySwiper(){
                  slidesPerGroup={1}
                  pagination={{ dynamicBullets: true, clickable: true }}
                  scrollbar={{ draggable: true }}
-                 centeredSlides={true}
                  loop
                  modules={[Pagination, Navigation]}
                  breakpoints={{
@@ -46,8 +50,11 @@ export default function MySwiper(){
                   576:{
                     slidesPerView:2,
                   },
-                  768:{
+                  860:{
                     slidesPerView:3,
+                  },
+                  1440:{
+                    slidesPerView:4,
                   }
                 }}
             >
